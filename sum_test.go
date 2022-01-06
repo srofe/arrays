@@ -14,6 +14,15 @@ func TestSum(t *testing.T) {
 			t.Errorf("got %d want %d given: %v", got, want, numbers)
 		}
 	})
+
+	t.Run("The Sum function shall account for an empty array", func(t *testing.T) {
+		numbers := []int{}
+		got := Sum(numbers)
+		want := 0
+		if got != want {
+			t.Errorf("got %d want %d given: %v", got, want, numbers)
+		}
+	})
 }
 
 func TestSumAll(t *testing.T) {
